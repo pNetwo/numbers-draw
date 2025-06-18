@@ -1,0 +1,34 @@
+.logo {
+  & img {
+    transition: 0.3s ease-in-out;
+  }
+
+  & a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: var(--logo);
+    color: var(--content-primary);
+
+    gap: 0.5rem;
+
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    &:hover img {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@media (width >= 80em) {
+  .logo {
+    & a {
+      justify-content: flex-start;
+    }
+  }
+}

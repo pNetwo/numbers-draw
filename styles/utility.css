@@ -1,0 +1,24 @@
+.px-base {
+  padding-inline: var(--px-base);
+}
+
+.container {
+  --max-width: 390px;
+  width: min(var(--max-width), 100% - var(--px-base) * 2);
+  margin-inline: auto;
+  padding: 2.75rem 0;
+}
+
+
+@media (width >= 80em) {
+  .px-base {
+    padding-inline: 8.5rem;
+  }
+
+  .container {
+    --max-width: 80em;
+
+    padding-top: 4.75rem;
+    padding-bottom: 9.5rem;
+  }
+}
