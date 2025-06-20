@@ -6,8 +6,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/index.css" />
@@ -21,6 +23,78 @@
           <img src="/assets/icons/logo.svg" alt="logotipo" />
           Numbers</a
         >
+      </div>
+
+      <header>
+        <span>Online - Gratuito</span>
+        <h1>
+          Sorteador <br />
+          de Números
+        </h1>
+      </header>
+
+      <div class="main">
+        <div class="content-form">
+          <div class="title-form">
+            <h2>Quero Sortear:</h2>
+            <p>
+              Defina o intervalo e a quantidade de números, clique em "Sortear"
+              e veja os resultados na tela. É rápido e fácil!
+            </p>
+          </div>
+
+          <form>
+            <div class="cards">
+              <div class="card">
+                <label for="numbers">
+                  Números
+                  <input
+                    type="number"
+                    name="numbers"
+                    id="numbers"
+                    placeholder="2"
+                  />
+                </label>
+              </div>
+
+              <div class="card">
+                <label for="of">
+                  De
+                  <input type="number" name="of" id="of" placeholder="1" />
+                </label>
+              </div>
+
+              <div class="card">
+                <label for="until">
+                  Até
+                  <input
+                    type="number"
+                    name="until"
+                    id="until"
+                    placeholder="100"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="toggle">
+              <label for="toggle-wrapper">
+                <input
+                  type="checkbox"
+                  name="toggle-wrapper"
+                  id="toggle-wrapper"
+                />
+                <span class="slider"></span>
+                Não repetir número
+              </label>
+            </div>
+
+            <button type="submit">
+              Sortear
+              <img src="/assets/icons/arrow-button.svg" alt="seta do botão" />
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </body>

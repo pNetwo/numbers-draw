@@ -45,13 +45,15 @@
   --display-small: 700 2rem/1.3 var(--ff-sora);
   --logo: 800 1.5rem/1.3 var(--ff-sora);
 
-  --overline: 700 1rem/1.5 var(--roboto-mono);
+  --overline: 700 1rem/1.5 var(--ff-roboto-mono);
+  --ff-inter: 400 0.75rem/1.5 "Inter", sans-serif;
 
-  --paragraph-large: 500 1rem/1.5 var(--roboto-flex);
-  --paragraph-medium: 500 0.875rem/1.5 var(--roboto-flex);
-  --paragraph-small: 500 0.75rem/1.5 var(--roboto-flex);
-  --label-medium: 700 1.25rem/1.5 var(--roboto-flex);
-  --label-small: 700 1rem/1.5 var(--roboto-flex);
+  --paragraph-large: 500 1rem/1.5 var(--ff-roboto-flex);
+  --paragraph-medium: 500 0.875rem/1.5 var(--ff-roboto-flex);
+  --paragraph-small: 500 0.75rem/1.5 var(--ff-roboto-flex);
+  --title-medium: 700 1.25rem/1.5 var(--ff-roboto-flex);
+  --label-medium: 700 1rem/1.5 var(--ff-roboto-flex);
+  --label-small: 700 1rem/1.5 var(--ff-roboto-flex);
 
   /*---------- Margens ----------*/
   --px-base: 2rem;
@@ -61,6 +63,8 @@ body {
   background-color: var(--background-primary);
   background-image: url(/assets/background-image.jpg);
   background-size: cover;
+
+  color: var(--content-primary);
 }
 
 a {
