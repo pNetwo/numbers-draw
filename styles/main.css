@@ -58,6 +58,11 @@
           &:focus {
             background: linear-gradient(var(--background-tertiary)) padding-box,
               linear-gradient(to right, var(--gradient-border)) border-box;
+
+            background-size: 400%;
+            background-position: 0 50%;
+
+            animation: borderMoviment 1.5s infinite;
           }
 
           &::-webkit-inner-spin-button,
@@ -146,39 +151,56 @@
     width: 100%;
 
     background-color: var(--background-tertiary);
-    border: 2px solid transparent;
-    border-radius: 1rem;
-    outline: none;
-
     font: var(--label-medium);
     color: var(--content-primary);
-    text-transform: uppercase;
+
+    border: 2px solid transparent;
+    border-radius: 1rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
 
+    text-transform: uppercase;
+    cursor: pointer;
+
     transition: border 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: linear-gradient(var(--background-secondary)) padding-box,
-        linear-gradient(to right, var(--gradient-border)) border-box;
+        linear-gradient(45deg, var(--gradient-border)) border-box;
 
-      animation: borderMoviment 1s infinite;
+      background-size: 400%;
+      background-position: 0 50%;
+
+      animation: borderMoviment 1.5s ease-in-out infinite;
+    }
+
+    &:hover img,
+    &:focus img {
+      animation: arrowMoviment 1.5s ease-in-out infinite;
     }
   }
 }
 
-@media (width >= 80em) {
+@keyframes borderMoviment {
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-@keyframes borderMoviment {
-  from {
-    transform: rotate(0deg);
+@keyframes arrowMoviment {
+  0% {
+    transform: translateX(0rem);
   }
 
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(0.5rem);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

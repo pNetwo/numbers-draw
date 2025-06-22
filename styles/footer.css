@@ -1,0 +1,31 @@
+footer {
+  margin-top: 5rem;
+
+  & .questions {
+    display: grid;
+    grid-template-areas:
+    "img span" 
+    "img p";
+    grid-template-columns: auto auto;
+
+    align-items: start;
+
+    gap: 0.5rem;
+
+    & img {
+      grid-area: img;
+    }
+
+    & span {
+      grid-area: span;
+      font: var(--paragraph-medium);
+      color: var(--content-brand);
+    }
+
+    & p {
+      grid-area: p;
+      font: var(--paragraph-small);
+      color: var(--content-secondary);
+    }
+  }
+}
