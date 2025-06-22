@@ -9,7 +9,6 @@
   padding: 2.75rem 0;
 }
 
-
 @media (width >= 80em) {
   .px-base {
     padding-inline: 8.5rem;
@@ -20,5 +19,35 @@
 
     padding-top: 4.75rem;
     padding-bottom: 9.5rem;
+
+    display: grid;
+    grid-template-areas:
+      "logo logo"
+      "header main"
+      "footer main";
+
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    margin-inline: 6.75rem;
+
+    & .logo {
+      grid-area: logo;
+    }
+
+    & header {
+      grid-area: header;
+    }
+
+    & .main {
+      grid-area: main;
+    }
+
+    & footer {
+      grid-area: footer;
+    }
   }
+
+  
 }

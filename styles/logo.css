@@ -16,11 +16,18 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-      filter: brightness(0.8);
+      background: linear-gradient(to right, var(--gradient-border));
+      background-size: 400%;
+      background-position: 0% 200%;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: borderMoviment 3s infinite;
     }
 
     &:hover img {
-      transform: rotate(90deg);
+      animation: imgRotate 2s infinite;
     }
   }
 }
@@ -30,5 +37,21 @@
     & a {
       justify-content: flex-start;
     }
+  }
+}
+
+@keyframes borderMoviment {
+  50% {
+    background-position: 200% 100%;
+  }
+}
+
+@keyframes imgRotate {
+  to {
+    transform: rotate(0deg);
+  }
+
+  from {
+    transform: rotate(360deg);
   }
 }
