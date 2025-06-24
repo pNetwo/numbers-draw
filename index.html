@@ -34,7 +34,7 @@
       </header>
 
       <div class="main">
-        <div class="content-form hidden">
+        <div class="content-form">
           <div class="title-form">
             <h2>Quero Sortear:</h2>
             <p>
@@ -89,7 +89,7 @@
               Não repetir número
             </div>
 
-            <button type="submit">
+            <button class="roll" type="submit">
               Sortear
               <img src="/assets/icons/arrow-button.svg" alt="seta do botão" />
             </button>
@@ -107,30 +107,22 @@
               <div class="number-box"></div>
               <span class="number">23</span>
             </div>
-            <div class="number-wrapper">
-              <div class="number-box"></div>
-              <span class="number">86</span>
-            </div>
-            <div class="number-wrapper">
-              <div class="number-box"></div>
-              <span class="number">71</span>
-            </div>
-            <div class="number-wrapper">
-              <div class="number-box"></div>
-              <span class="number">32</span>
-            </div>
-            <div class="number-wrapper">
-              <div class="number-box"></div>
-              <span class="number">60</span>
-            </div>
           </div>
 
-          <button>
+          <button class="reroll" type="submit">
             Sortear Novamente
-            <img
-              src="/assets/icons/reroll.svg"
-              alt="icone de roletar novamente"
-            />
+            <div class="play">
+              <img
+                class="arrow-side"
+                src="/assets/icons/reroll-side.svg"
+                alt=""
+              />
+              <img
+                class="arrow-center"
+                src="/assets/icons/reroll-center.svg"
+                alt=""
+              />
+            </div>
           </button>
         </div>
       </div>
@@ -155,5 +147,7 @@
         </div>
       </footer>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

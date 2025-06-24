@@ -1,7 +1,6 @@
 .results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 
@@ -9,11 +8,15 @@
     & h2 {
       font: var(--label-large);
       color: var(--content-primary);
+
+      text-transform: uppercase;
     }
 
     & p {
       font: var(--overline);
       color: var(--content-secondary);
+
+      text-transform: uppercase;
     }
   }
 
@@ -22,8 +25,8 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 1.5rem;
+    grid-template-rows: auto; 
+    gap: 3rem;
 
     & .number-wrapper {
       display: flex;
@@ -47,6 +50,61 @@
         color: var(--color-inverse);
 
         animation: changeColor 3s linear forwards;
+      }
+    }
+  }
+
+  & .reroll {
+    margin-top: 2.5rem;
+    height: 3.5rem;
+    width: 100%;
+
+    background-color: var(--background-tertiary);
+    font: var(--label-medium);
+    color: var(--content-primary);
+
+    border: 2px solid transparent;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: border 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(var(--background-secondary)) padding-box,
+        linear-gradient(45deg, var(--gradient-border)) border-box;
+
+      background-size: 400%;
+      background-position: 0 50%;
+
+      animation: borderMoviment 1.5s ease-in-out infinite;
+    }
+
+    &:hover .arrow-side,
+    &:focus .arrow-side {
+      animation: rotateImg 1.5s linear infinite;
+    }
+
+    & .play {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      & .arrow-side {
+        position: relative;
+      }
+
+      & .arrow-center {
+        position: absolute;
+        padding-left: 2px;
       }
     }
   }
@@ -95,5 +153,11 @@
 
   100% {
     color: var(--content-brand);
+  }
+}
+
+@keyframes rotateImg {
+  0% {
+    transform: rotate(-360deg);
   }
 }

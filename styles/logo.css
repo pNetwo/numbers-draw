@@ -27,7 +27,7 @@
     }
 
     &:hover img {
-      animation: imgRotate 2s infinite;
+      animation: imgRotate 2s linear infinite;
     }
   }
 }
@@ -47,11 +47,7 @@
 }
 
 @keyframes imgRotate {
-  to {
-    transform: rotate(0deg);
-  }
-
-  from {
-    transform: rotate(360deg);
+  0% {
+    transform: rotate(-360deg);
   }
 }
