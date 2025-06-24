@@ -2,6 +2,8 @@ footer {
   margin-top: 5rem;
 
   & .questions {
+    width: 386px;
+
     display: grid;
     grid-template-areas:
     "img span" 
@@ -26,6 +28,8 @@ footer {
       grid-area: p;
       font: var(--paragraph-small);
       color: var(--content-secondary);
+
+      margin-bottom: 2.25rem;
     }
   }
 }

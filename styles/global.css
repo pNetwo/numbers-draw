@@ -52,6 +52,7 @@
   --paragraph-medium: 500 0.875rem/1.5 var(--ff-roboto-flex);
   --paragraph-small: 500 0.75rem/1.5 var(--ff-roboto-flex);
   --title-medium: 700 1.25rem/1.5 var(--ff-roboto-flex);
+  --label-large: 700 1.25rem/1.5 var(--ff-roboto-flex);
   --label-medium: 700 1rem/1.5 var(--ff-roboto-flex);
   --label-small: 700 1rem/1.5 var(--ff-roboto-flex);
 

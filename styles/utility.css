@@ -9,6 +9,10 @@
   padding: 2.75rem 0;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (width >= 80em) {
   .px-base {
     padding-inline: 8.5rem;

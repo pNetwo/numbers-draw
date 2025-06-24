@@ -1,0 +1,99 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & .title-results {
+    & h2 {
+      font: var(--label-large);
+      color: var(--content-primary);
+    }
+
+    & p {
+      font: var(--overline);
+      color: var(--content-secondary);
+    }
+  }
+
+  & .result-numbers {
+    margin-top: 2.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+
+    & .number-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .number-box {
+        position: relative;
+        width: 6.25rem;
+        height: 6.25rem;
+
+        background-color: var(--content-brand);
+        border-radius: 1.125rem;
+
+        animation: rotateDiv 3s linear forwards;
+      }
+
+      & .number {
+        position: absolute;
+        font: 700 3rem/1.5 "Roboto Mono", sans-serif;
+        color: var(--color-inverse);
+
+        animation: changeColor 3s linear forwards;
+      }
+    }
+  }
+}
+
+@keyframes rotateDiv {
+  0% {
+    transform: scale(0.3);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: rotate(-360deg);
+  }
+
+  85% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  95% {
+    color: var(--color-inverse);
+  }
+
+  100% {
+    color: var(--content-brand);
+  }
+}
