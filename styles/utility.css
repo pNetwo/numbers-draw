@@ -32,7 +32,7 @@
 
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
     margin-inline: 6.75rem;
 
@@ -42,16 +42,20 @@
 
     & header {
       grid-area: header;
+      position: absolute;
+      margin-top: 5rem;
     }
 
     & .main {
       grid-area: main;
+      align-self: stretch;
+      margin-top: 5rem;
     }
 
     & footer {
       grid-area: footer;
+      position: absolute;
+      margin-top: 23rem;
     }
   }
-
-  
 }

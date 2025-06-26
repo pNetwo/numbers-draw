@@ -1,22 +1,19 @@
 .results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
   & .title-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+
     & h2 {
       font: var(--label-large);
       color: var(--content-primary);
-
-      text-transform: uppercase;
     }
 
     & p {
       font: var(--overline);
       color: var(--content-secondary);
-
-      text-transform: uppercase;
     }
   }
 
@@ -24,9 +21,8 @@
     margin-top: 2.5rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto; 
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 
     & .number-wrapper {
       display: flex;
@@ -104,7 +100,6 @@
 
       & .arrow-center {
         position: absolute;
-        padding-left: 2px;
       }
     }
   }
