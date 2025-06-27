@@ -5,6 +5,8 @@ const inputNumber = document.querySelector("#input-number");
 const inputMin = document.querySelector("#input-min");
 const inputMax = document.querySelector("#input-max");
 const resultNumbers = document.querySelector(".result-numbers");
+const showForm = document.querySelector(".content-form");
+const showResults = document.querySelector(".results");
 
 form.onsubmit = (event) => {
   event.preventDefault();
@@ -26,6 +28,9 @@ form.onsubmit = (event) => {
     return;
   }
 
+  showForm.classList.add("hidden");
+  showResults.classList.remove("hidden");
+
   let numberValue = inputNumber.value - 1;
 
   for (step = 0; step <= numberValue; step++) {
@@ -35,8 +40,6 @@ form.onsubmit = (event) => {
       resultNumbers.appendChild(newNumber);
     }, step * 3500);
   }
-
-  console.log(numberValue);
 };
 
 function createRollNumbers() {

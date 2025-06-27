@@ -34,8 +34,6 @@
     justify-content: center;
     align-items: start;
 
-    margin-inline: 6.75rem;
-
     & .logo {
       grid-area: logo;
     }
