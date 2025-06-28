@@ -6,7 +6,8 @@ const inputMin = document.querySelector("#input-min");
 const inputMax = document.querySelector("#input-max");
 const resultNumbers = document.querySelector(".result-numbers");
 const showForm = document.querySelector(".content-form");
-const showResults = document.querySelector(".results");
+const showResults = document.querySelector(".content");
+const showRerollButton = document.querySelector(".reroll");
 
 form.onsubmit = (event) => {
   event.preventDefault();
@@ -38,7 +39,7 @@ form.onsubmit = (event) => {
       const newNumber = createRollNumbers();
 
       resultNumbers.appendChild(newNumber);
-    }, step * 3500);
+    }, step * 3000);
   }
 };
 

@@ -1,11 +1,11 @@
 .results {
-  & .title-results {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
+  & .title-results {
     & h2 {
       font: var(--label-large);
       color: var(--content-primary);
@@ -21,8 +21,8 @@
     margin-top: 2.5rem;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 
     & .number-wrapper {
       display: flex;
@@ -54,38 +54,39 @@
     margin-top: 2.5rem;
     height: 3.5rem;
     width: 100%;
+    & button {
+      background-color: var(--background-tertiary);
+      font: var(--label-medium);
+      color: var(--content-primary);
 
-    background-color: var(--background-tertiary);
-    font: var(--label-medium);
-    color: var(--content-primary);
+      border: 2px solid transparent;
+      border-radius: 1rem;
 
-    border: 2px solid transparent;
-    border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+      text-transform: uppercase;
+      cursor: pointer;
 
-    text-transform: uppercase;
-    cursor: pointer;
+      transition: border 0.3s ease-in-out;
 
-    transition: border 0.3s ease-in-out;
+      &:hover,
+      &:focus {
+        background: linear-gradient(var(--background-secondary)) padding-box,
+          linear-gradient(45deg, var(--gradient-border)) border-box;
 
-    &:hover,
-    &:focus {
-      background: linear-gradient(var(--background-secondary)) padding-box,
-        linear-gradient(45deg, var(--gradient-border)) border-box;
+        background-size: 400%;
+        background-position: 0 50%;
 
-      background-size: 400%;
-      background-position: 0 50%;
+        animation: borderMoviment 1.5s ease-in-out infinite;
+      }
 
-      animation: borderMoviment 1.5s ease-in-out infinite;
-    }
-
-    &:hover .arrow-side,
-    &:focus .arrow-side {
-      animation: rotateImg 1.5s linear infinite;
+      &:hover .arrow-side,
+      &:focus .arrow-side {
+        animation: rotateImg 1.5s linear infinite;
+      }
     }
 
     & .play {
