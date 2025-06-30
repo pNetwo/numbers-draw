@@ -53,40 +53,37 @@
   & .reroll {
     margin-top: 2.5rem;
     height: 3.5rem;
-    width: 100%;
-    & button {
-      background-color: var(--background-tertiary);
-      font: var(--label-medium);
-      color: var(--content-primary);
+    width: 30rem;
 
-      border: 2px solid transparent;
-      border-radius: 1rem;
+    background-color: var(--background-tertiary);
+    font: var(--label-medium);
+    color: var(--content-primary);
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 1rem;
 
-      text-transform: uppercase;
-      cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
-      transition: border 0.3s ease-in-out;
+    text-transform: uppercase;
+    cursor: pointer;
 
-      &:hover,
-      &:focus {
-        background: linear-gradient(var(--background-secondary)) padding-box,
-          linear-gradient(45deg, var(--gradient-border)) border-box;
+    transition: border 0.3s ease-in-out;
 
-        background-size: 400%;
-        background-position: 0 50%;
+    &:hover {
+      background: linear-gradient(var(--background-secondary)) padding-box,
+        linear-gradient(45deg, var(--gradient-border)) border-box;
 
-        animation: borderMoviment 1.5s ease-in-out infinite;
-      }
+      background-size: 400%;
+      background-position: 0 50%;
 
-      &:hover .arrow-side,
-      &:focus .arrow-side {
-        animation: rotateImg 1.5s linear infinite;
-      }
+      animation: borderMoviment 1.5s ease-in-out infinite;
+    }
+
+    &:hover .arrow-side {
+      animation: rotateImg 1.5s linear infinite;
     }
 
     & .play {
@@ -101,6 +98,7 @@
 
       & .arrow-center {
         position: absolute;
+        padding-left: 2px;
       }
     }
   }

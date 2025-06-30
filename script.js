@@ -8,19 +8,14 @@ const resultNumbers = document.querySelector(".result-numbers");
 const showForm = document.querySelector(".content-form");
 const showResults = document.querySelector(".content");
 const showRerollButton = document.querySelector(".reroll");
+const inputCheck = document.querySelector("#toggle-wrapper");
+const buttonReroll = document.querySelector(".reroll");
 
 form.onsubmit = (event) => {
   event.preventDefault();
 
-  if (
-    parseInt(inputNumber.value) === 0 ||
-    parseInt(inputMin.value) === 0 ||
-    parseInt(inputMax.value) === 0
-  ) {
+  if (inputNumber.value === 0 || inputMin.value === 0 || inputMax.value === 0) {
     alert("O número 0 não pode ser usado. Tente outro número.");
-    inputNumber.value = "";
-    inputMin.value = "";
-    inputMax.value = "";
     return;
   }
 
@@ -32,14 +27,13 @@ form.onsubmit = (event) => {
   showForm.classList.add("hidden");
   showResults.classList.remove("hidden");
 
-  let numberValue = inputNumber.value - 1;
+  drawersNumbers();
 
-  for (step = 0; step <= numberValue; step++) {
-    setTimeout(() => {
-      const newNumber = createRollNumbers();
-
-      resultNumbers.appendChild(newNumber);
-    }, step * 3000);
+  if (inputCheck.checked) {
+    buttonReroll.addEventListener("click", () => {
+      resultNumbers.replaceChildren();
+      drawersNumbers();
+    });
   }
 };
 
@@ -47,7 +41,7 @@ function createRollNumbers() {
   const min = parseInt(inputMin.value);
   const max = parseInt(inputMax.value);
 
-  const result = Math.ceil(Math.random() * (max - min + 1) + min);
+  const result = Math.ceil(Math.random() * (max - min - 1) + min);
 
   const divWrapper = document.createElement("div");
   divWrapper.classList.add("number-wrapper");
@@ -62,4 +56,16 @@ function createRollNumbers() {
   divWrapper.append(numberBox, numberSpan);
 
   return divWrapper;
+}
+
+function drawersNumbers() {
+  let numberValue = inputNumber.value - 1;
+
+  for (let step = 0; step <= numberValue; step++) {
+    setTimeout(() => {
+      const newNumber = createRollNumbers();
+
+      resultNumbers.appendChild(newNumber);
+    }, step * 3000);
+  }
 }
