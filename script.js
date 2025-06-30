@@ -34,6 +34,17 @@ form.onsubmit = (event) => {
       resultNumbers.replaceChildren();
       drawersNumbers();
     });
+  } else {
+    buttonReroll.addEventListener("click", () => {
+      showForm.classList.remove("hidden");
+      showResults.classList.add("hidden");
+
+      resultNumbers.replaceChildren();
+
+      inputNumber.value = "";
+      inputMin.value = "";
+      inputMax.value = "";
+    });
   }
 };
 
@@ -41,7 +52,7 @@ function createRollNumbers() {
   const min = parseInt(inputMin.value);
   const max = parseInt(inputMax.value);
 
-  const result = Math.ceil(Math.random() * (max - min - 1) + min);
+  const result = Math.floor(Math.random() * (max - min + 1) + min);
 
   const divWrapper = document.createElement("div");
   divWrapper.classList.add("number-wrapper");
