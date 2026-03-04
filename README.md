@@ -1,6 +1,6 @@
 # Numbers Drawers
 
-Um aplicativo web para sorteio de números aleatórios online e gratuito.
+Um aplicativo web para sorteio de números aleatórios.
 
 ![Preview do Projeto](assets/preview.png)
 
