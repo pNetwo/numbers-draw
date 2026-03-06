@@ -27,12 +27,12 @@ form.onsubmit = (event) => {
   showForm.classList.add("hidden");
   showResults.classList.remove("hidden");
 
-  drawersNumbers();
+  drawNumbers();
 
   if (inputCheck.checked) {
     buttonReroll.addEventListener("click", () => {
       resultNumbers.replaceChildren();
-      drawersNumbers();
+      drawNumbers();
     });
   } else {
     buttonReroll.addEventListener("click", () => {
@@ -69,7 +69,7 @@ function createRollNumbers() {
   return divWrapper;
 }
 
-function drawersNumbers() {
+function drawNumbers() {
   let numberValue = inputNumber.value - 1;
 
   for (let step = 0; step <= numberValue; step++) {

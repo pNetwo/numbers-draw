@@ -1,4 +1,4 @@
-# Numbers Drawers
+# Numbers Draw
 
 Um aplicativo web para sorteio de números aleatórios.
 
@@ -6,7 +6,7 @@ Um aplicativo web para sorteio de números aleatórios.
 
 ## 📋 Descrição
 
-O Numbers Drawers é uma ferramenta simples e intuitiva que permite aos usuários sortear números aleatórios dentro de um intervalo personalizado. Ideal para sorteios, jogos, decisões aleatórias e qualquer situação que precise de geração de números randômicos.
+O Numbers Draw é uma ferramenta simples e intuitiva que permite aos usuários sortear números aleatórios dentro de um intervalo personalizado. Ideal para sorteios, jogos, decisões aleatórias e qualquer situação que precise de geração de números randômicos.
 
 ## 🚀 Funcionalidades
 
@@ -33,7 +33,7 @@ O Numbers Drawers é uma ferramenta simples e intuitiva que permite aos usuário
 ## 📁 Estrutura do Projeto
 
 ```
-numbers-drawers/
+numbers-draw/
 ├── index.html          # Página principal
 ├── script.js           # Lógica JavaScript
 ├── styles/             # Arquivos CSS organizados
