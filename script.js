@@ -11,6 +11,14 @@ const showRerollButton = document.querySelector(".reroll");
 const inputCheck = document.querySelector("#toggle-wrapper");
 const buttonReroll = document.querySelector(".reroll");
 
+let timeouts = [];
+let lastResults = [];
+
+function clearTimeouts() {
+  timeouts.forEach((timeout) => clearTimeout(timeout));
+  timeouts = [];
+}
+
 form.onsubmit = (event) => {
   event.preventDefault();
 
@@ -24,35 +32,39 @@ form.onsubmit = (event) => {
     return;
   }
 
+  lastResults = [];
   showForm.classList.add("hidden");
   showResults.classList.remove("hidden");
 
   drawNumbers();
+};
+
+buttonReroll.addEventListener("click", () => {
+  clearTimeouts();
 
   if (inputCheck.checked) {
-    buttonReroll.addEventListener("click", () => {
-      resultNumbers.replaceChildren();
-      drawNumbers();
-    });
+    resultNumbers.replaceChildren();
+    replayNumbers();
   } else {
-    buttonReroll.addEventListener("click", () => {
-      showForm.classList.remove("hidden");
-      showResults.classList.add("hidden");
+    showForm.classList.remove("hidden");
+    showResults.classList.add("hidden");
 
-      resultNumbers.replaceChildren();
+    resultNumbers.replaceChildren();
+    lastResults = [];
 
-      inputNumber.value = "";
-      inputMin.value = "";
-      inputMax.value = "";
-    });
+    inputNumber.value = "";
+    inputMin.value = "";
+    inputMax.value = "";
   }
-};
+});
 
 function createRollNumbers() {
   const min = parseInt(inputMin.value);
   const max = parseInt(inputMax.value);
 
   const result = Math.floor(Math.random() * (max - min + 1) + min);
+
+  lastResults.push(result);
 
   const divWrapper = document.createElement("div");
   divWrapper.classList.add("number-wrapper");
@@ -69,14 +81,35 @@ function createRollNumbers() {
   return divWrapper;
 }
 
+function replayNumbers() {
+  lastResults.forEach((num, index) => {
+    const timeout = setTimeout(() => {
+      const divWrapper = document.createElement("div");
+      divWrapper.classList.add("number-wrapper");
+
+      const numberBox = document.createElement("div");
+      numberBox.classList.add("number-box");
+
+      const numberSpan = document.createElement("span");
+      numberSpan.classList.add("number");
+      numberSpan.textContent = num;
+
+      divWrapper.append(numberBox, numberSpan);
+      resultNumbers.appendChild(divWrapper);
+    }, index * 3000);
+    timeouts.push(timeout);
+  });
+}
+
 function drawNumbers() {
   let numberValue = inputNumber.value - 1;
 
   for (let step = 0; step <= numberValue; step++) {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       const newNumber = createRollNumbers();
 
       resultNumbers.appendChild(newNumber);
     }, step * 3000);
+    timeouts.push(timeout);
   }
 }
