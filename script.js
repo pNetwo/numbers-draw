@@ -10,9 +10,11 @@ const showResults = document.querySelector(".content");
 const showRerollButton = document.querySelector(".reroll");
 const inputCheck = document.querySelector("#toggle-wrapper");
 const buttonReroll = document.querySelector(".reroll");
+const titleResult = document.querySelector(".title-results p");
 
 let timeouts = [];
 let lastResults = [];
+let resultCount = 1;
 
 function clearTimeouts() {
   timeouts.forEach((timeout) => clearTimeout(timeout));
@@ -33,6 +35,8 @@ form.onsubmit = (event) => {
   }
 
   lastResults = [];
+  resultCount = 1;
+  titleResult.textContent = "1° Resultado";
   showForm.classList.add("hidden");
   showResults.classList.remove("hidden");
 
@@ -43,6 +47,8 @@ buttonReroll.addEventListener("click", () => {
   clearTimeouts();
 
   if (inputCheck.checked) {
+    resultCount++;
+    titleResult.textContent = `${resultCount}° Resultado`;
     resultNumbers.replaceChildren();
     replayNumbers();
   } else {
@@ -51,6 +57,8 @@ buttonReroll.addEventListener("click", () => {
 
     resultNumbers.replaceChildren();
     lastResults = [];
+    resultCount = 1;
+    titleResult.textContent = "1° Resultado";
 
     inputNumber.value = "";
     inputMin.value = "";
