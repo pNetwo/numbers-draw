@@ -22,12 +22,12 @@ function clearTimeouts() {
 form.onsubmit = (event) => {
   event.preventDefault();
 
-  if (inputNumber.value === 0 || inputMin.value === 0 || inputMax.value === 0) {
+  if (Number(inputNumber.value) === 0 || Number(inputMin.value) === 0 || Number(inputMax.value) === 0) {
     alert("O número 0 não pode ser usado. Tente outro número.");
     return;
   }
 
-  if (inputMin.value >= inputMax.value) {
+  if (Number(inputMin.value) >= Number(inputMax.value)) {
     alert("O valor máximo tem que ser maior que o mínimo.");
     return;
   }
