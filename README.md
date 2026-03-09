@@ -12,10 +12,9 @@ O Numbers Draw é uma ferramenta simples e intuitiva que permite aos usuários s
 
 - Sorteio de múltiplos números simultaneamente
 - Definição de intervalo personalizado (mínimo e máximo)
-- Opção para não repetir números
+- Opção para usar os mesmos números
 - Animações suaves na exibição dos resultados
 - Design responsivo e moderno
-- Interface em português brasileiro
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -53,7 +52,7 @@ numbers-draw/
 
 1. O usuário define a quantidade de números a sortear
 2. Define o intervalo (valor mínimo e máximo)
-3. Opcionalmente, pode ativar a opção "não repetir números"
+3. Opcionalmente, pode ativar a opção "usar os mesmos números"
 4. Clica em "Sortear" e vê os resultados com animações
 5. Pode sortear novamente ou reiniciar o processo
 
