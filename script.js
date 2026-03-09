@@ -90,8 +90,15 @@ function createRollNumbers() {
 }
 
 function replayNumbers() {
-  lastResults.forEach((num, index) => {
+  const min = parseInt(inputMin.value);
+  const max = parseInt(inputMax.value);
+  const quantity = parseInt(inputNumber.value);
+
+  for (let i = 0; i < quantity; i++) {
     const timeout = setTimeout(() => {
+      const result = Math.floor(Math.random() * (max - min + 1) + min);
+      lastResults.push(result);
+
       const divWrapper = document.createElement("div");
       divWrapper.classList.add("number-wrapper");
 
@@ -100,13 +107,13 @@ function replayNumbers() {
 
       const numberSpan = document.createElement("span");
       numberSpan.classList.add("number");
-      numberSpan.textContent = num;
+      numberSpan.textContent = result;
 
       divWrapper.append(numberBox, numberSpan);
       resultNumbers.appendChild(divWrapper);
-    }, index * 3000);
+    }, i * 3000);
     timeouts.push(timeout);
-  });
+  }
 }
 
 function drawNumbers() {
